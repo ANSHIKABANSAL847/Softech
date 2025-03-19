@@ -1,0 +1,183 @@
+.slider-nav {
+    margin-top: 15px;
+  }
+  
+  .slider-button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .slider-button:hover,
+  .slider-button:focus {
+    background-color: #ffa726;
+    color: white;
+    transform: scale(1.1);
+  }
+  
+
+
+
+
+
+
+
+
+
+
+   .story-section {
+    background: linear-gradient(135deg, #1a237e, #0d47a1);
+    position: relative;
+    color: white;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .section-header {
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+  
+  .section-header h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  
+  .section-header p {
+    font-size: 18px;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .scroll-container {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .story-slider {
+    display: flex;
+    gap: 50px;
+    padding: 0 10vw; /* Add padding on the sides */
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scroll-behavior: smooth;
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .story-slider::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .story-card {
+    min-width: 350px;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .story-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  .story-card .year {
+    font-size: 24px;
+    font-weight: 700;
+    color: #64b5f6;
+    margin-bottom: 15px;
+  }
+  
+  .story-card h4 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  
+  .story-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+  
+  .progress-container {
+    position: absolute;
+    bottom: 50px;
+    left: 10%;
+    right: 10%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background: white;
+    transform-origin: left;
+  }
+  
+  /* Add some decorative elements */
+  .story-section::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 0;
+  }
+  
+  .story-section::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 0;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .story-card {
+      min-width: 280px;
+      padding: 20px;
+    }
+    
+    .story-slider {
+      gap: 30px;
+      padding: 0 5vw;
+    }
+    
+    .section-header {
+      padding-top: 50px;
+      padding-bottom: 30px;
+    }
+    
+    .section-header h2 {
+      font-size: 32px;
+    }
+  }

@@ -1,0 +1,122 @@
+/* Remove extra space between navbar and hero section */
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap'); */
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+     font-family: "Poppins", sans-serif;
+    
+
+
+
+
+  }
+  
+  /* Navbar */
+  .bg-dark-blue {
+    background-color: #001f3f !important; /* Dark blue color */
+  }
+  
+  .navbar {
+    height: 70px; /* Keeping height unchanged */
+    z-index: 1050;
+  }
+  
+  .nav-text {
+    font-size: 18px; /* Increased text size */
+    color: white !important;
+    font-weight: bold;
+    margin: 0 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-text:hover {
+    color: #ffd700 !important; /* Gold hover effect */
+  }
+  
+  /* Mega Menu */
+  .mega-menu {
+    position: absolute;
+    top: 70px; /* Align with navbar height */
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 5px solid #001f3f;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1040;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+    transition: opacity 0.4s ease, transform 0.3s ease;
+  }
+  
+  .mega-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  /* Mega Menu Categories */
+  .category-title {
+    font-size: 20px; /* Increased size */
+    font-weight: bold;
+    margin-bottom: 12px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  
+  /* Mega Menu Items */
+  .menu-item {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 5px;
+    background: rgba(0, 123, 255, 0.1);
+    font-weight: bold;
+  }
+  
+  .menu-item .icon {
+    margin-right: 10px;
+    font-size: 22px;
+    color: #001f3f;
+  }
+  
+  .menu-item:hover {
+    background: linear-gradient(90deg, #001f3f, #003366);
+    color: white;
+    padding-left: 25px;
+  }
+  
+  /* Remove space between navbar and hero section */
+ /* Fix Hero Section Overlapping with Navbar */
+.hero-section {
+    padding-top: 70px; /* Same height as navbar */
+  }
+  
+  
+  /* Mobile View */
+  @media (max-width: 991px) {
+    .navbar {
+      height: auto;
+      padding: 15px;
+    }
+    .mega-menu {
+      position: static;
+      visibility: visible;
+      opacity: 1;
+      transform: none;
+      box-shadow: none;
+      border: none;
+    }
+    .mega-menu .row {
+      flex-direction: column;
+    }
+  }
+  

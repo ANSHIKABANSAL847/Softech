@@ -1,0 +1,147 @@
+
+
+  .testimonials-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #f8f9fa;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Left Side */
+  .testimonials-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 25%;
+    padding-left: 50px;
+  }
+  
+  .smiley {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  
+  .highlight {
+    color: #e4572e;
+  }
+  
+  /* Arrows Below Text */
+  .arrows {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .arrow {
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background 0.3s;
+  }
+  
+  .arrow:hover {
+    background: #218838;
+  }
+  
+  /* Right Side */
+  .testimonials-right {
+    display: flex;
+    width: 75%;
+    overflow: hidden;
+  }
+  
+  .testimonials-row {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    white-space: nowrap;
+    padding: 10px 0;
+  }
+  
+  .testimonials-row::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .testimonial-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: left;
+    flex: 0 0 auto;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Company Logo */
+  .company-logo {
+    width: 80px;
+    margin-bottom: 10px;
+  }
+  
+  /* Quote */
+  .quote {
+    font-size: 1rem;
+    font-style: italic;
+    color: #555;
+    margin: 15px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Limit to 4 lines */
+    -webkit-box-orient: vertical;
+  }
+  
+  /* Testimonial Footer */
+  .testimonial-footer {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+  }
+  
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .name {
+    font-weight: bold;
+  }
+  
+  .position {
+    font-size: 0.9rem;
+    color: gray;
+  }
+  
+  .rating {
+    color: gold;
+    font-size: 1.2rem;
+  }
+  
