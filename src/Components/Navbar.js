@@ -3,6 +3,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navbar.css";
+import ThemeSwitcher from "./ThemeSwitcher"; 
 import { FaChevronDown, FaChevronUp, FaBookOpen, FaVideo, FaFileAlt, FaCheckCircle, FaLaptopCode, FaDatabase, FaShieldAlt, FaCloud } from "react-icons/fa";
 
 const NavigationBar = () => {
@@ -65,7 +66,7 @@ const NavigationBar = () => {
   };
 
   return (
-    <Navbar expand="lg" className="shadow-lg py-3 bg-dark-blue fixed-top">
+    <Navbar expand="lg" className="shadow-lg py-3 bg-dark-blue fixed-top"  bg="dark" variant="dark">
       <Container>
         <Navbar.Brand as={Link} to="/" className="fw-bold text-white fs-2">
           InstituteName
@@ -160,6 +161,7 @@ const NavigationBar = () => {
             </div>
           </Nav>
         </Navbar.Collapse>
+        <ThemeSwitcher />
       </Container>
     </Navbar>
   );

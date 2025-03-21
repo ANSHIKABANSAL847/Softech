@@ -2,15 +2,18 @@ import heroImage from "../images/a.webp";
 import Slider from "react-slick";
 import c from "../images/c.jpg";
 import React from "react";
-import { useRef ,useState} from "react";
-import { Container, Row, Col, Button} from "react-bootstrap";
-import { motion} from "framer-motion";
+import { useRef, useState } from "react";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import { motion } from "framer-motion";
+//import { useInView } from "react-intersection-observer";
 import b from "../images/b.jpg";
-//import heroImage from "../images/a.webp";
+import { useTheme } from "./ThemeProvider";
 
 const HeroSection = () => {
   const sliderRef = useRef(null);
-  const [activeSlide, setActiveSlide] = useState(0); // Track active slide index
+  const [activeSlide, setActiveSlide] = useState(0);
+  const { theme } = useTheme();
+  //const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
 
   const settings = {
     dots: false,
@@ -21,7 +24,7 @@ const HeroSection = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: false,
-    beforeChange: (oldIndex, newIndex) => setActiveSlide(newIndex), // Update active slide
+    beforeChange: (oldIndex, newIndex) => setActiveSlide(newIndex),
   };
 
   const slides = [
@@ -45,17 +48,33 @@ const HeroSection = () => {
     },
   ];
 
+  const themeStyles = {
+    light: {
+      background: "rgb(162, 204, 247)",
+      textColor: "gray",
+      buttonVariant: "dark",
+      dotColor: "rgba(0, 0, 0, 0.2)",
+      sliderButtonVariant: "dark",
+    },
+    dark: {
+      background: "#0d1b2a",
+      textColor: "white",
+      buttonVariant: "light",
+      dotColor: "rgba(255, 255, 255, 0.2)",
+      sliderButtonVariant: "light",
+    },
+    darkBlue: {
+      background: "rgb(19, 9, 156)",
+      textColor: "white",
+      buttonVariant: "light",
+      dotColor: "rgba(228, 238, 241, 0.5)",
+      sliderButtonVariant: "primary",
+    },
+  };
+
   return (
-    <Container
-      fluid
-      className="hero-container mt-5 py-5 text-white position-relative"
-      style={{
-        background: "linear-gradient(135deg, #1a237e 30%, #0d47a1 100%)",
-        overflow: "hidden",
-      }}
-    >
-      {/* Background Floating Dots */}
-      {[
+    <Container  fluid className={`hero-container py-5 position-relative text-${themeStyles[theme].textColor}`} style={{ background: themeStyles[theme].background }}>
+      {[ 
         { size: 150, top: "10%", left: "5%", duration: 5 },
         { size: 100, bottom: "10%", right: "10%", duration: 6 },
         { size: 80, top: "30%", left: "20%", duration: 4 },
@@ -69,8 +88,8 @@ const HeroSection = () => {
           style={{
             width: `${ball.size}px`,
             height: `${ball.size}px`,
-            background: "rgba(255, 255, 255, 0.2)",
-            zIndex: 1, // Ensure dots stay in background
+            background: themeStyles[theme].dotColor,
+            zIndex: 1,
             ...ball,
           }}
           animate={{ x: [0, 20, -20, 0], y: [0, 20, -20, 0] }}
@@ -150,4 +169,6 @@ const HeroSection = () => {
 
 
 export default HeroSection;
+
+
 
